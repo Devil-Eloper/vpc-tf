@@ -1,0 +1,20 @@
+terraform {
+  required_providers {
+    aws = {
+      source  = "hashicorp/aws"
+      version = "~> 4.67"
+    }
+  }
+}
+
+provider "aws" {
+  region = var.region_name
+
+   default_tags {
+    tags = {
+      "Application" = "GoLang-Lambda"
+      "Tool"        = "Terragrunt-managed-resource"
+    }
+  }
+}
+
